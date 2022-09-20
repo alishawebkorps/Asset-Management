@@ -1,0 +1,2 @@
+class ProductFieldsController < ApplicationController
+end
