@@ -9,8 +9,8 @@
 <h5>User Id:<%= current_user.id%></h5>
 <br>
 <%= link_to 'Add Field', new_product_field_path ,class:"btn btn-primary" ,style:"color:white;margin:10px;"%>
-
 <%= link_to 'Add Products', addproduct_path ,class:"btn btn-primary" ,style:"color:white;margin:10px;"%>
+<%= link_to 'All Products', allproduct_path ,class:"btn btn-primary" ,style:"color:white;margin:10px;"%>
 <br><br>
 <%if @product_field.count > 0 %>
 <table class="table">

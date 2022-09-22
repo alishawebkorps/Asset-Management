@@ -1,0 +1,22 @@
+<div class="container">
+<table class="table", style="margin-top:100px;">
+<% @addproduct.each do |product| %>
+        <tr>
+        <% product.attributes.each do |attributes| %>
+          <% next if attributes[0]  == "_id"  %>
+          <th><%= attributes[0] %></th>
+           <% end %>
+           <th>Action</th>
+        <tr>
+        <tbody>
+         <tr>
+       <% product.attributes.each do |attributes| %>
+        <% next if attributes[0]  == "_id"  %>
+         <td><%= attributes[1] %></td>
+        <%end%>
+        <td>Delete</td>
+         </tr>
+      </tbody>
+  <% end %>
+  </table>
+  </div>

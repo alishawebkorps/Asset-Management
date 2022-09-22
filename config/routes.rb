@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   get 'home', to: "product_fields#index"
   get 'addproduct', to: 'addproducts#addproduct'
   post 'addproduct', to: 'addproducts#create'
+  get 'allproduct', to: 'addproducts#allproduct'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
