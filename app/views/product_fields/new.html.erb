@@ -1,0 +1,22 @@
+<%if user_signed_in?%>
+<div class="container">
+<h2>Product Fields</h2>
+
+<%= form_with(model: @product_field, local: false) do |f| %>
+   <div class="field">
+    <%= f.label :name , class:"form-label"%><br />
+    <%= f.text_field :name,class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :field_type, class:"form-label" %><br />
+   <%= f.select :field_type, ['integer', 'string', 'boolean']%>
+  </div><br>
+
+ 
+   <div class="actions">
+    <%= f.submit "Submit" ,class:"btn btn-primary"%>
+  </div>
+<% end %>
+</div>
+<%end%>

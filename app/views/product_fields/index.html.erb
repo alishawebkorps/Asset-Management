@@ -1,0 +1,38 @@
+<div>
+<nav class="navbar navbar-light bg-dark">
+<a href="/home" style="text-decoration:none;color:black;padding:2px;"><img src = "/assetpanda.png", style="width:100px; margin: -10px 0px -10px -10px;"></a>
+<%= link_to 'Logout', destroy_user_session_path ,method: :delete, class:"btn btn-danger" ,style:"color:white; width:100px; margin: -10px 5px -10px 0px;" %>
+</nav>
+<div class = "container" style="margin-top:20px;">
+<%if user_signed_in?%>
+<h5>User Name:<%= current_user.name%></h5>
+<h5>User Id:<%= current_user.id%></h5>
+<br>
+<%= link_to 'Add Field', new_product_field_path ,class:"btn btn-primary" ,style:"color:white;margin:10px;"%>
+
+<%= link_to 'Add Products', addproduct_path ,class:"btn btn-primary" ,style:"color:white;margin:10px;"%>
+<br><br>
+<%if @product_field.count > 0 %>
+<table class="table">
+     <thead>
+       <tr>
+          <th>Field_Name</th>
+          <th>Field_Type</th>
+       </tr>
+     </thead>
+     <tbody>
+        <%@product_field.each do |product|%>
+          <tr>
+            <td><%= product.name%></td>
+            <td><%= product.field_type%></td>
+            <td></td>
+          </tr>
+        <%end%>
+      </tbody>
+    </table>
+   <%else%>
+  <h3>Please Add Fields For Your Product</h3>
+<%end%>
+<%end%>
+</div>
+</div>

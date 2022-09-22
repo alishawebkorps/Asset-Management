@@ -1,2 +1,3 @@
 class ProductField < ApplicationRecord
+   
 end

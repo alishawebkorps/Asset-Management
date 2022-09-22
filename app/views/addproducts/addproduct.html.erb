@@ -1,0 +1,19 @@
+<div class = "container mt-5">
+  <div class = "row">
+    <div class = " col-md-6">
+      <div class = "p-1">
+       <h1>Add product form</h1>
+      <hr>
+        <form action="/addproduct " method = "post">
+        <%= csrf_meta_tags %>
+        <% @addproduct.each do |addproduct|%>
+          <label for= <%= addproduct.name %> > <%=addproduct.name%> </label><br>
+          <input type= <%= addproduct.field_type %> id="fname" name = <%= addproduct.name %> ><br>
+          <%end%>
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token %><br>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
